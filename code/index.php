@@ -5,7 +5,6 @@ $stmt = $conn->prepare("SELECT * FROM counter WHERE id = 1");
 $stmt->execute();
 $row = $stmt->fetch();
 
-echo $row["counter"];
 
 $counter = $row["counter"] + 1;
 
@@ -13,11 +12,6 @@ $sql = "UPDATE counter SET counter=? WHERE id=1";
 $stmt = $conn->prepare($sql);
 $stmt->execute([$counter]);
 
-$stmt = $conn->prepare("SELECT * FROM counter WHERE id = 1");
-$stmt->execute();
-$row = $stmt->fetch();
-
-echo $row["counter"];
 
 ?>
 

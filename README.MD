@@ -14,3 +14,5 @@ git clone https://github.com/alexlouf/docker_eemi_e45.git
 cd *installation_folder*
 docker-compose up
 ```
+
+Open a browser and go to [localhost:8080](http://localhost:8080/)
