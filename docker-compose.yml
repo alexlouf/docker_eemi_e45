@@ -4,7 +4,7 @@ services:
     web:
         image: nginx:latest
         ports:
-            - "8090:80"
+            - "8080:80"
         volumes:
             - ./code:/code
             - ./site.conf:/etc/nginx/conf.d/default.conf
@@ -21,12 +21,14 @@ services:
         networks:
             - code-network
     mariadb:
+        container_name: dockerbasic_mariadb_1
         image: mariadb:latest
         ports:
-            - "3307:3306"
+            - "3306:3306"
         environment: 
             MYSQL_ROOT_PASSWORD: root
             MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+            MYSQL_DATABASE: compteur
         volumes:
             - ./mysql:/var/lib/mysql
         networks:
